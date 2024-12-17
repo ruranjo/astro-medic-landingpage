@@ -1,0 +1,61 @@
+---
+const features = [
+  {
+    icon: "📋",
+    title: "Gestión de Pacientes",
+    description:
+      "Organiza y accede rápidamente a los expedientes médicos de tus pacientes. Todo centralizado en un solo lugar para una administración más eficiente.",
+  },
+  {
+    icon: "🩺",
+    title: "Control de Consultas",
+    description:
+      "Registra y gestiona citas médicas de forma sencilla, asegurando un seguimiento detallado de las atenciones realizadas.",
+  },
+  {
+    icon: "💊",
+    title: "Inventario de Medicamentos",
+    description:
+      "Mantén un control preciso de los medicamentos disponibles en tu farmacia. Actualiza y consulta existencias en tiempo real.",
+  },
+  {
+    icon: "📊",
+    title: "Reportes Detallados",
+    description:
+      "Genera informes personalizados sobre ingresos, consultas realizadas, pacientes atendidos y otros datos clave para tu clínica.",
+  },
+  {
+    icon: "🔔",
+    title: "Recordatorios Automatizados",
+    description:
+      "Envía notificaciones a tus pacientes sobre sus próximas citas o tratamientos pendientes, reduciendo ausencias y mejorando la comunicación.",
+  },
+  {
+    icon: "🔒",
+    title: "Seguridad de Datos",
+    description:
+      "Protege la información sensible de tus pacientes con medidas avanzadas de seguridad y cumplimiento normativo.",
+  },
+];
+---
+
+<section class="bg-gray-100 py-16">
+  <div class="container mx-auto px-4">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      {features.map((feature) => (
+        <div class="flex items-start space-x-4 bg-white shadow-lg p-6 rounded-lg">
+          <!-- Icono -->
+          <div class="flex-shrink-0">
+            <div class="text-4xl text-primary">{feature.icon}</div>
+          </div>
+          <!-- Contenido -->
+          <div>
+            <h3 class="text-lg font-bold text-gray-800">{feature.title}</h3>
+            <p class="mt-2 text-gray-600">{feature.description}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+

@@ -1,11 +1,87 @@
 ---
-import Welcome from '../components/Welcome.astro';
+import Header from '../components/Header.astro';
+import HeroSection from '../components/HeroSection.astro';
 import Layout from '../layouts/Layout.astro';
+import CommunityBenefitsSection from '../components/CommunityBenefitsSection.astro';
+import AboutUsSection from '../components/AboutUsSection.astro';
+import CourseSteps from '../components/CourseSteps.astro';
+import OurCourses from '../components/OurCourses.astro';
+import FaqComponent from '../components/FaqComponent.astro';
+import StatsWithCallToAction from '../components/StatsWithCallToAction.astro';
+import Footer from '../components/Footer.astro';
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const faqData = [
+  {
+    question: "¿Qué funcionalidades ofrece el sistema?",
+    answer:
+      "El sistema incluye gestión de pacientes, control de citas médicas, historial clínico electrónico, administración de inventario médico y generación de reportes detallados para un mejor seguimiento de la clínica u hospital.",
+  },
+  {
+    question: "¿El sistema es compatible con dispositivos móviles?",
+    answer:
+      "Sí, nuestro sistema está diseñado para ser completamente responsivo, lo que significa que puedes acceder a él desde cualquier dispositivo, ya sea computadora, tablet o teléfono móvil, sin perder funcionalidad.",
+  },
+  {
+    question: "¿Quiénes pueden utilizar el sistema?",
+    answer:
+      "El sistema está diseñado para clínicas, hospitales y consultorios médicos. Lo pueden utilizar médicos, enfermeros, personal administrativo y cualquier otro profesional de la salud involucrado en la gestión de pacientes o recursos médicos.",
+  },
+  {
+    question: "¿Cómo puedo adquirir el sistema?",
+    answer:
+      "La adquisición del sistema se realiza a través de nuestra página oficial. Contamos con planes flexibles de suscripción mensual o anual, según las necesidades de tu organización.",
+  },
+  {
+    question: "¿Qué soporte técnico ofrecen?",
+    answer:
+      "Proveemos soporte técnico 24/7 mediante correo electrónico, chat en vivo y teléfono. Además, contamos con tutoriales detallados y una base de conocimientos para resolver dudas comunes.",
+  },
+  {
+    question: "¿El sistema cumple con normativas de privacidad y seguridad de datos?",
+    answer:
+      "Sí, nuestro sistema cumple con todas las normativas internacionales de privacidad y seguridad de datos médicos, como la HIPAA y GDPR. Garantizamos que la información de los pacientes se almacene y gestione de forma segura.",
+  },
+];
+
+const stats = [
+  { label: "Pacientes Atendidos", value: "+50k" },
+  { label: "Consultorios Activos", value: "+120" },
+  { label: "Procesos Automatizados", value: "85%" },
+  { label: "Colaboradores Médicos", value: "45" },
+];
 ---
 
 <Layout>
-	<Welcome />
+  <Header />
+  <div id="hero-section">
+    <HeroSection />
+  </div>
+  <div id="community-benefits">
+    <CommunityBenefitsSection />
+  </div>
+  <div id="about-us">
+    <AboutUsSection />
+  </div>
+  <div id="course-steps">
+    <CourseSteps />
+  </div>
+  <div id="our-courses">
+    <OurCourses />
+  </div>
+  <div id="faq">
+    <FaqComponent
+      title="Preguntas Frecuentes"
+      subtitle="Todo lo que Necesitas Saber Sobre Nuestros Servicios"
+      faqs={faqData}
+    />
+  </div>
+  <div id="stats">
+    <StatsWithCallToAction 
+      stats={stats}
+      headline="Optimiza la Gestión de Tu Institución"
+      description="Descubre las Herramientas de Nuestro Sistema de Gestión Médica e Implementa Soluciones Innovadoras para Mejorar la Atención a Tus Pacientes"
+      cta="Conoce el sistema"
+    />
+  </div>
+  <Footer/>
 </Layout>

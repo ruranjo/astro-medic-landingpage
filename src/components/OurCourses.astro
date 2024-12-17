@@ -1,0 +1,78 @@
+---
+import { Image } from 'astro:assets';
+
+import Course1 from '../assets/images/course1.png';
+import Course2 from '../assets/images/course2.png';
+import Course3 from '../assets/images/course3.png';
+import Course4 from '../assets/images/course4.png';
+import Course5 from '../assets/images/course5.png';
+
+const courses = [
+  {
+    title: 'Gestión de Consultorios Médicos',
+    slug: 'gestion-consultorios-medicos',
+    description: 'Domina las herramientas esenciales para organizar y administrar consultorios médicos de forma eficiente y profesional.',
+    image: Course1,
+    alt: 'Imagen de Gestión de Consultorios Médicos',
+  },
+  {
+    title: 'Automatización de Procesos Clínicos',
+    slug: 'automatizacion-procesos-clinicos',
+    description: 'Aprende a implementar sistemas de automatización para agilizar la gestión de citas, historias clínicas y comunicación con pacientes.',
+    image: Course2,
+    alt: 'Imagen de Automatización de Procesos Clínicos',
+  },
+  {
+    title: 'Manejo de Historias Clínicas Digitales',
+    slug: 'manejo-historias-clinicas',
+    description: 'Descubre cómo optimizar el almacenamiento, acceso y seguridad de historias clínicas digitales para mejorar la atención al paciente.',
+    image: Course3,
+    alt: 'Imagen de Manejo de Historias Clínicas Digitales',
+  },
+  {
+    title: 'Seguridad de Datos en Salud',
+    slug: 'seguridad-datos-salud',
+    description: 'Conoce las mejores prácticas y normativas para garantizar la protección de la información médica sensible en tu sistema.',
+    image: Course4,
+    alt: 'Imagen de Seguridad de Datos en Salud',
+  },
+  {
+    title: 'Optimización de Recursos en Clínicas',
+    slug: 'optimizacion-recursos-clinicas',
+    description: 'Explora estrategias para maximizar la eficiencia en el uso de recursos, desde equipos médicos hasta personal administrativo.',
+    image: Course5,
+    alt: 'Imagen de Optimización de Recursos en Clínicas',
+  },
+];
+
+
+
+---
+
+<section class="bg-gray-100 py-16">
+  <div class="container mx-auto px-4">
+    <h2 class="text-3xl font-bold mb-8">Explora Nuestros Cursos</h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {courses.map((course) => (
+        <div class="bg-white shadow-md rounded-lg overflow-hidden">
+          <Image 
+                src={course.image} 
+                alt="Imagen del curso" 
+                class="object-cover "
+          />
+          <div class="p-4">
+            <h3 class="text-xl font-bold">{course.title}</h3>
+            <p class="text-gray-600">{course.description}</p>
+            <a href={`/cursos/${course.slug}`} class="text-blue-600 hover:underline mt-4 inline-block">
+              Ver más
+            </a>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+
+

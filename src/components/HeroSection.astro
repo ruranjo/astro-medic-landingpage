@@ -1,0 +1,39 @@
+---
+import { Image } from 'astro:assets';
+import HeroImage from '../assets/images/hero.png';
+
+const heading = "Optimiza la Gestión de Citas y Pacientes en Clínicas y Hospitales";
+const subheading = "Facilitamos la administración de registros médicos, programación de citas y control de pacientes con soluciones tecnológicas diseñadas para el sector salud.";
+---
+
+<section class="bg-gray-100 py-16  mt-12">
+  <div class="container mx-auto px-4 text-center">
+    <!-- Imagen -->
+    <div class="mb-8">
+      <Image src={HeroImage} alt="Sistema de gestión para hospitales y clínicas" class="mx-auto w-full max-w-md rounded-lg shadow-lg" />
+    </div>
+    <!-- Encabezado -->
+    <h1 class="text-4xl font-extrabold text-gray-800 sm:text-5xl">
+      {heading}
+    </h1>
+    <!-- Subtítulo -->
+    <p class="mt-4 text-lg text-gray-600 sm:text-xl">
+      {subheading}
+    </p>
+    <!-- Botones -->
+    <div class="mt-8 flex justify-center space-x-4">
+      <a
+        href="/cursos"
+        class="px-6 py-3 text-white bg-primary hover:bg-primary-dark rounded-lg shadow-md transition-colors"
+      >
+        Nuestros cursos
+      </a>
+      <a
+        href="/mas-informacion"
+        class="px-6 py-3 text-primary bg-white border border-primary rounded-lg shadow-md hover:bg-gray-100 transition-colors"
+      >
+        Más información
+      </a>
+    </div>
+  </div>
+</section>

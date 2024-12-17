@@ -1,0 +1,33 @@
+---
+export interface Faq {
+  question: string;
+  answer: string;
+}
+
+export interface Props {
+  title: string;
+  subtitle: string;
+  faqs: Faq[];
+}
+
+const { title, subtitle, faqs } = Astro.props;
+---
+
+<section class="max-w-6xl mx-auto px-4 py-8">
+  <header class="text-center mb-8">
+    <h2 class="text-2xl font-bold text-primary-dark">{title}</h2>
+    <p class="text-gray-600 mt-2">{subtitle}</p>
+  </header>
+
+  <div class="grid grid-cols-1 md:grid-cols-2  gap-6">
+    {faqs.map((faq, index) => (
+      <div 
+        class="bg-white shadow-md rounded-lg p-4 border border-gray-200"
+        
+      >
+        <h3 class="text-lg font-medium text-primary-dark">{faq.question}</h3>
+        <p class="text-gray-600 mt-2">{faq.answer}</p>
+      </div>
+    ))}
+  </div>
+</section>

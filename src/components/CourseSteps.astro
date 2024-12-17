@@ -1,0 +1,71 @@
+---
+import { Image } from 'astro:assets';
+import RightImage from '../assets/images/steps.png';
+---
+
+<section class="bg-gray-100 py-16">
+  <div class="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between">
+    {/* Columna Izquierda: Pasos */}
+    <div class="w-full md:w-1/2">
+      <h2 class="text-3xl font-extrabold text-gray-800 mb-8">
+        Mejora la Gestión Médica en 3 Sencillos Pasos
+      </h2>
+
+      {/* Paso 1 */}
+      <div class="flex items-start mb-8 relative pl-8">
+        <div class="w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center absolute top-0 left-0">
+          <span class="text-xl font-semibold">🗃️</span>
+        </div>
+        <div class="ml-12">
+          <h3 class="text-xl font-semibold text-gray-800">Paso 1: Organiza tus Pacientes</h3>
+          <p class="text-lg text-gray-600">
+            Utiliza nuestro sistema para registrar, clasificar y acceder fácilmente al historial de tus pacientes, 
+            asegurando un manejo eficiente y profesional.
+          </p>
+        </div>
+        {/* Conexión Línea */}
+        <div class="w-1 h-16 bg-gray-400 absolute left-4 top-10"></div>
+      </div>
+
+      {/* Paso 2 */}
+      <div class="flex items-start mb-8 relative pl-8">
+        <div class="w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center absolute top-0 left-0">
+          <span class="text-xl font-semibold">📈</span>
+        </div>
+        <div class="ml-12">
+          <h3 class="text-xl font-semibold text-gray-800">Paso 2: Administra los Recursos</h3>
+          <p class="text-lg text-gray-600">
+            Lleva un control en tiempo real de inventarios, suministros y equipo médico, optimizando su uso y disponibilidad.
+          </p>
+        </div>
+        {/* Conexión Línea */}
+        <div class="w-1 h-16 bg-gray-400 absolute left-4 top-10"></div>
+      </div>
+
+      {/* Paso 3 */}
+      <div class="flex items-start mb-8 relative pl-8">
+        <div class="w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center absolute top-0 left-0">
+          <span class="text-xl font-semibold">🚀</span>
+        </div>
+        <div class="ml-12">
+          <h3 class="text-xl font-semibold text-gray-800">Paso 3: Mejora la Atención al Paciente</h3>
+          <p class="text-lg text-gray-600">
+            Conecta a tu equipo médico y pacientes mediante recordatorios, citas en línea y comunicación directa, 
+            mejorando la experiencia y calidad del servicio.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    {/* Columna Derecha: Imagen */}
+    <div class="w-full md:w-1/2 mt-8 md:mt-0">
+      <div class="relative w-full min-h-96 bg-gray-200 rounded-lg overflow-hidden shadow-lg">
+        <Image 
+          src={RightImage} 
+          alt="Mejora la gestión médica" 
+          class="object-cover w-full h-full"
+        />
+      </div>
+    </div>
+  </div>
+</section>
